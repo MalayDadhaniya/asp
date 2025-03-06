@@ -1,0 +1,62 @@
+- Call next page with pass value (Redirect Component):
+
+in SUBMIT Button
+Response.Redirect("Demo2.aspx?Fnm="+TextBox1.Text+"&Lnm"+TextBox2.Text);
+
+second page
+Label1.Tex = Resquest.QureryString["Frnm"] + responce.QureryString["Lsnm"]
+
+
+btn1
+Responce.Cookies["namew"].value=Textbox.Text;
+Responce.Cookies["value"].expires= DateTime.Now.AddMinutes(1);
+Label1.Twxt = "created";
+Textbox1.Text = "";
+
+
+- Cookie:
+
+
+
+btn2
+if(Request.Cookis["value"]==null)
+{
+	Label1.Text = "expired";
+}
+else
+{
+	Textbox1.Text = Request.Cookies["name"].value
+}
+
+definition
+write a program to create cookie for user name and password and change background color after 1 min.
+
+
+- Session:
+
+// Storing data in session
+Session["UserName"] = "JohnDoe";
+Session["CartItems"] = 5;
+
+// Retrieving data from session
+string userName = Session["UserName"] as string;
+int cartItems = Convert.ToInt32(Session["CartItems"]);
+
+
+xml file:
+
+<configuration>
+  <system.web>
+    <sessionState mode="InProc" timeout="30" />
+  </system.web>
+</configuration>
+
+- session end
+
+Session.Abandon();
+
+
+
+
+
+
